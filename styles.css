@@ -128,3 +128,22 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+
+#boardWrapper {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+#gameBoard {
+    width: 600px;
+    height: 600px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    border: 5px solid red;
+}
+
+.square {
+    border: 2px solid black;
+}
