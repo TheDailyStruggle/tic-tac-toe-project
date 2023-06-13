@@ -17,6 +17,9 @@ const gameBoard = (() => {
             square.innerText = board[i];
             square.addEventListener("click", e => {
                 console.log(e);
+                let index = e.target.id;
+                let player = currentPlayer.symbol;
+                makeMove(index, player);
             });
             gBoard.appendChild(square);
         }
@@ -25,6 +28,8 @@ const gameBoard = (() => {
     const makeMove = (index, player) => {
         if (index >= 0 && index < board.length && board[index] === "") {
             board[index] = player;
+            displayBoard();
+            togglePlayer();
             return true;
         }
         return false;
