@@ -67,3 +67,8 @@ gameBoard.displayBoard();
 //Making Moves
 
 let currentPlayer = p1;
+
+const togglePlayer = function () {
+    currentPlayer = currentPlayer === p1 ? p2 : p1;
+    return currentPlayer;
+};
