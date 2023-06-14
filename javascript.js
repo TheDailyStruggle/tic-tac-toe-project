@@ -51,22 +51,37 @@ const gameBoard = (() => {
 
 // Create Players
 
+
+
 function Player(name, symbol) {
     this.name = name;
     this.symbol = symbol;
 
 };
 
-// p1Name = prompt('Player 1, please enter your name');
-// p2Name = prompt('Player 2, please enter your name');
-p1Name = "Chelsea";
-p2Name = "Chad";
+//Get Player Names From Form
+const playersForm = document.getElementById('players');
+const player1Input = document.getElementById("player1");
+const player2Input = document.getElementById("player2");
+const enterPlayersBtn = document.getElementById("enterPlayers");
+
+enterPlayersBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    p1Name = player1Input.value;
+    p2Name = player2Input.value;
+    player1Input.value = "";
+    player2Input.value = "";
+    boardWrapper.classList.remove('fade');
+    playersForm.classList.add('hidden');
+});
+
+p1Name = "";
+p2Name = "";
 let p1Symbol = "X";
 let p2Symbol = "O";
 
 const p1 = new Player(p1Name, p1Symbol);
 const p2 = new Player(p2Name, p2Symbol);
-
 
 gameBoard.displayBoard();
 

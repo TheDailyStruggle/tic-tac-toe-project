@@ -193,7 +193,8 @@ body {
     font-size: 2em;
 }
 
-#playAgain {
+#playAgain,
+#enterPlayers {
     margin-top: 25px;
     position: relative;
     bottom: -15px;
@@ -251,6 +252,45 @@ footer>p>span {
     opacity: 0.2;
 }
 
-#winPopup.hidden {
+#players {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: #023047;
+    padding: 40px;
+
+    border-radius: 20px;
+    box-shadow: 0 0 12px 2px rgba(0, 0, 0, 0.6);
+
+    color: white;
+    font-size: 18px;
+}
+
+#players>legend {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#players>label {
+    margin-top: 20px;
+}
+
+#players>input {
+    margin-top: 10px;
+}
+
+#players>button {
+    width: 60%;
+    align-self: center;
+    font-weight: bold;
+}
+
+#winPopup.hidden,
+#players.hidden {
     display: none;
 }
