@@ -51,6 +51,13 @@ const gameBoard = (() => {
 
 // Create Players
 
+p1Name = "";
+p2Name = "";
+let p1Symbol = "X";
+let p2Symbol = "O";
+
+const p1 = new Player(p1Name, p1Symbol);
+const p2 = new Player(p2Name, p2Symbol);
 
 
 function Player(name, symbol) {
@@ -73,15 +80,10 @@ enterPlayersBtn.addEventListener('click', (e) => {
     player2Input.value = "";
     boardWrapper.classList.remove('fade');
     playersForm.classList.add('hidden');
+    p1.name = p1Name;
+    p2.name = p2Name;
 });
 
-p1Name = "";
-p2Name = "";
-let p1Symbol = "X";
-let p2Symbol = "O";
-
-const p1 = new Player(p1Name, p1Symbol);
-const p2 = new Player(p2Name, p2Symbol);
 
 gameBoard.displayBoard();
 
