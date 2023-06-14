@@ -57,8 +57,10 @@ function Player(name, symbol) {
 
 };
 
-p1Name = prompt('Player 1, please enter your name');
-p2Name = prompt('Player 2, please enter your name');
+// p1Name = prompt('Player 1, please enter your name');
+// p2Name = prompt('Player 2, please enter your name');
+p1Name = "Chelsea";
+p2Name = "Chad";
 let p1Symbol = "X";
 let p2Symbol = "O";
 
@@ -97,9 +99,31 @@ const checkWin = (board, symbol) => {
     for (let condition of winConditions) {
         const [a, b, c] = condition;
         if (board[a] === symbol && board[b] === symbol && board[c] === symbol) {
-            // display win
-            console.log(`${symbol} Wins!`)
+            showWinner(currentPlayer.name);
         }
     };
 
 };
+
+// Display Winner
+
+const showWinner = function (winnerName) {
+    const winPopup = document.getElementById("winPopup");
+    const winner = document.getElementById("winner");
+    const boardWrapper = document.getElementById("boardWrapper");
+    winner.innerText = winnerName;
+    boardWrapper.classList.add("fade");
+    winPopup.classList.remove("hidden");
+};
+
+
+// Play Again
+
+const playAgainBtn = document.getElementById("playAgain");
+
+playAgainBtn.addEventListener('click', () => {
+    gameBoard.resetBoard();
+    gameBoard.displayBoard();
+    boardWrapper.classList.remove("fade");
+    winPopup.classList.add("hidden");
+})

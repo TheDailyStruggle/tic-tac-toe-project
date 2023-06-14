@@ -83,7 +83,7 @@ video {
     padding: 0;
     border: 0;
     font-size: 100%;
-    font: inherit;
+    /* font: inherit; */
     vertical-align: baseline;
 }
 
@@ -129,10 +129,21 @@ table {
     border-spacing: 0;
 }
 
+/* CSS Reset End */
+
+* {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+}
+
+body {
+    background-color: rgb(142, 202, 230);
+}
+
 #boardWrapper {
     display: grid;
     place-items: center;
-    height: 100vh;
+    height: 75vh;
 }
 
 #gameBoard {
@@ -141,14 +152,105 @@ table {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    border: 5px solid red;
+    gap: 15px;
 }
 
 .square {
-    border: 2px solid black;
-    font-size: 10em;
-    font-weight: bold;
+    border: 2px solid #FB8500;
+    font-size: 9em;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: white;
+    box-shadow: 0 0 12px 2px rgba(0, 0, 0, 0.35);
+}
+
+.square:active {
+    transform: scale(0.95);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.6);
+}
+
+#winPopup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: #023047;
+    width: 400px;
+    height: 200px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 20px;
+    box-shadow: 0 0 12px 2px rgba(0, 0, 0, 0.6);
+
+    color: white;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+#playAgain {
+    margin-top: 25px;
+    position: relative;
+    bottom: -15px;
+    padding: 10px 20px;
+    background-color: #FB8500;
+    border-radius: 15px;
+    color: white;
+    box-shadow: 0 0 12px 2px rgba(0, 0, 0, 0.6);
+}
+
+#playAgain:active {
+    transform: scale(0.95);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.6);
+}
+
+header {
+    background-color: #023047;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 4em;
+    color: white;
+}
+
+footer {
+    background-color: #023047;
+    margin: 0;
+    padding: 0;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+footer>p,
+footer>p>span {
+    font-size: 12px;
+}
+
+#logo {
+    width: 25px;
+    height: 25px;
+    margin: 0 10px;
+}
+
+.fade {
+    opacity: 0.2;
+}
+
+#winPopup.hidden {
+    display: none;
 }
