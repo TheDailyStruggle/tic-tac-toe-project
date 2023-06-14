@@ -146,4 +146,9 @@ table {
 
 .square {
     border: 2px solid black;
+    font-size: 10em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
