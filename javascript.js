@@ -143,4 +143,5 @@ playAgainBtn.addEventListener('click', () => {
     gameBoard.displayBoard();
     boardWrapper.classList.remove("fade");
     winPopup.classList.add("hidden");
+    currentPlayer = p1;
 })
